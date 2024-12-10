@@ -1,0 +1,174 @@
+/* CSS Değişkenleri */
+:root {
+  --primary-color: #6e7f3d; /* Arka plan için ana renk */
+  --secondary-color: #3e4a7e; /* İkincil ton */
+  --text-color: #ffffff; /* Genel yazı rengi */
+  --button-primary: #28a745; /* Birincil buton rengi */
+  --button-primary-hover: #218838; /* Birincil buton hover rengi */
+  --button-secondary: #007bff; /* İkincil buton rengi */
+  --button-secondary-hover: #0056b3; /* İkincil buton hover rengi */
+  --form-bg: #24243c; /* Form arka plan rengi */
+  --form-border: #ddd; /* Form kenar rengi */
+  --heading-color: #fff; /* Başlık rengi */
+  --table-bg: #2d2d44; /* Tablo arka plan rengi */
+  --table-header-bg: #3b3b59; /* Tablo başlık arka plan rengi */
+}
+
+/* Genel Stil */
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Başlık Stilleri */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+}
+
+/* Formlar ve Kartlar */
+form,
+.task-form {
+  background-color: var(--form-bg);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+form input,
+form textarea,
+.task-form input,
+.task-form textarea {
+  background-color: #fff;
+  color: black;
+  border: 1px solid var(--form-border);
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 0.375rem;
+  font-size: 16px;
+}
+
+/* Butonlar */
+button,
+.task-form button,
+.navbar button {
+  border-radius: 0.375rem;
+  padding: 15px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+button,
+.task-form button {
+  background-color: var(--button-primary);
+  color: #fff;
+  border: none;
+}
+
+button:hover,
+.task-form button:hover {
+  background-color: var(--button-primary-hover);
+}
+
+.navbar button {
+  background-color: var(--button-secondary);
+  color: #fff;
+  border: none;
+}
+
+.navbar button:hover {
+  background-color: var(--button-secondary-hover);
+}
+
+/* Tablo */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--table-bg);
+  border-radius: 8px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  color: var(--text-color);
+}
+
+th {
+  background-color: var(--table-header-bg);
+}
+
+td {
+  background-color: var(--table-bg);
+}
+
+/* Görev Durumları */
+.status-btn {
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+}
+
+.in-progress {
+  background-color: #f39c12;
+}
+.ready {
+  background-color: #3498db;
+}
+.waiting {
+  background-color: #1abc9c;
+}
+.pending {
+  background-color: #f1c40f;
+}
+.done {
+  background-color: #2ecc71;
+}
+.stuck {
+  background-color: #e74c3c;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+  form,
+  .task-form {
+    padding: 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  input,
+  textarea,
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
